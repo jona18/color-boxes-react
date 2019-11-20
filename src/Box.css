@@ -1,0 +1,58 @@
+.Box {
+  width: 300px;
+  height: 300px;
+}
+.Box-red {
+  background-color: rebeccapurple;
+}
+.Box-blue {
+  background-color: blue;
+}
+.Box-green {
+  background-color: green;
+}
+.Box-yellow {
+  background-color: yellow;
+}
+.Box-violet {
+  background-color: violet;
+}
+.Box-grey {
+  background-color: grey;
+}
+.Box-white {
+  background-color: darkgray;
+}
+.Box-black {
+  background-color: black;
+}
+.Box-pink {
+  background-color: pink;
+}
+.Box-orange {
+  background-color: orange;
+}
+.Box-brown {
+  background-color: brown;
+}
+.Box-darkblue {
+  background-color: darkblue;
+}
+.Box-gold {
+  background-color: gold;
+}
+.Box-cyan {
+  background-color: cyan;
+}
+.Box-greenyellow {
+  background-color: greenyellow;
+}
+.Box-darkred {
+  background-color: darkred;
+}
+.Box-darkmagenta {
+  background-color: darkmagenta;
+}
+.Box-wheat {
+  background-color: wheat;
+}
