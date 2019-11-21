@@ -25,12 +25,12 @@ class BoxesContainer extends Component {
       boxes: currState.boxes.map(box => ({color: this.props.colors[Math.floor(Math.random() * this.props.boxes)], id: id+= 1}))
     }));
   }
-  renderBox(e) {
-    let newColors = this.props.colors.filter(color => color !== e.target.dataset.color);
+  renderBox(oldColor, id) {
+    let newColors = this.props.colors.filter(color => color !== oldColor);
     let randomColor = newColors[Math.floor(Math.random() * newColors.length)]
     
     let newBoxes = this.state.boxes.map(box => {
-      if(box.id == e.target.id) {
+      if(box.id === id) {
         return {...box, color: randomColor}
       }
       return box;
@@ -38,8 +38,8 @@ class BoxesContainer extends Component {
 
     this.setState({boxes: newBoxes});
   }
-  handleClick(e) {
-    this.renderBox(e);
+  handleClick(color, id) {
+    this.renderBox(color, id);
   }
   render() {
     console.log();
