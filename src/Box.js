@@ -11,7 +11,7 @@ class Box extends Component {
   }
   render() {
     return (
-      <div className='Box' onClick={this.handleColorChange} id={this.props.id} data-color={this.props.color} style={{backgroundColor: this.props.color}}>
+      <div className='Box' onClick={this.handleColorChange} id={this.props.id} style={{backgroundColor: this.props.color}}>
 
       </div>
     );
