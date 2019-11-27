@@ -10,22 +10,23 @@ class BoxesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      boxes: Array.from({length: this.props.boxes})
+      boxes: this.createBoxes()
     };
-    this.renderBoxes = this.renderBoxes.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.changeColor = this.changeColor.bind(this);
   }
  
-  componentWillMount() {
-    this.renderBoxes();
-  }
-  renderBoxes() {
+  createBoxes() {
+    let boxes = [];
     let id = 0;
-    this.setState(currState => ({
-      boxes: currState.boxes.map(box => ({color: this.props.colors[Math.floor(Math.random() * this.props.boxes)], id: id+= 1}))
-    }));
+
+    for(let i = 0; i < this.props.boxes; i++) {
+      boxes.push({color: this.props.colors[Math.floor(Math.random() * this.props.boxes)], id: id+= 1})
+    }
+
+    return boxes;
   }
-  renderBox(oldColor, id) {
+
+  changeColor(oldColor, id) {
     let newColors = this.props.colors.filter(color => color !== oldColor);
     let randomColor = newColors[Math.floor(Math.random() * newColors.length)]
     
@@ -38,14 +39,11 @@ class BoxesContainer extends Component {
 
     this.setState({boxes: newBoxes});
   }
-  handleClick(color, id) {
-    this.renderBox(color, id);
-  }
+
   render() {
-    console.log();
     return (
       <div className="BoxesContainer">
-        {this.state.boxes.map(box => (<Box customClickEvent={this.handleClick} color={box.color} id={box.id} />))}
+        {this.state.boxes.map(box => (<Box changeColor={this.changeColor} color={box.color} id={box.id} />))}
       </div>
     );
   }
